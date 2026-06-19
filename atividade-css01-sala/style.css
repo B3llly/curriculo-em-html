@@ -1,10 +1,12 @@
+/* Estilo geral da página */
+
 body {
 
-background-color: #ffe6f0; 
+background-color: #ffe6f0; /* cor de fundo (rosa bebê) */
 
-color: #333333;
+color: #333333; /* cor do texto */
 
-font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif; 
+font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif; /* fonte personalizada sem Google */
 
 margin: 0;
 
@@ -14,24 +16,27 @@ padding: 0;
 
 
 
+/* Container principal */
+
 .container {
 
 max-width: 900px;
 
-margin: 40px auto; 
+margin: 40px auto; /* margens */
 
-padding: 20px; 
+padding: 20px; /* espaçamento interno */
 
 background-color: #ffffff;
 
-border: 2px solid #ff99cc;
+border: 2px solid #ff99cc; /* borda */
 
-border-radius: 15px; 
+border-radius: 15px; /* cantos arredondados */
 
 }
 
 
 
+/* Títulos */
 
 h1, h2 {
 
@@ -42,19 +47,22 @@ text-align: center;
 }
 
 
+
+/* Estilização do formulário */
+
 form {
 
 display: flex;
 
 flex-direction: column;
 
-gap: 12px; 
+gap: 12px; /* espaçamento entre os elementos */
 
 }
 
 
 
-
+/* Campos do formulário */
 
 input, select, textarea {
 
@@ -72,6 +80,7 @@ font-size: 16px;
 
 
 
+/* Efeito ao clicar no campo */
 
 input:focus, textarea:focus, select:focus {
 
@@ -83,6 +92,7 @@ box-shadow: 0 0 5px #ff99cc;
 
 
 
+/* Botão de envio */
 
 button {
 
@@ -106,6 +116,7 @@ transition: 0.3s;
 
 
 
+/* Efeito hover no botão */
 
 button:hover {
 
@@ -114,3 +125,5 @@ background-color: #e60073;
 transform: scale(1.05);
 
 } 
+
+Aqui
