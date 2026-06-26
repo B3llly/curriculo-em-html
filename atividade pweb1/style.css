@@ -121,6 +121,10 @@ label {
   font-size: 1rem;
   margin-top: 16px;
 }
+label::after{
+  content: "*";
+  color: #b7c1c;
+}
 
 input, textarea {
   display: block;
