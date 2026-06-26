@@ -2,15 +2,18 @@
 /* Reflexão Bloco 1:
 O 'rem' muda o tamanho baseado na raiz do navegador, ideal para fontes acessíveis.
 O 'em' varia conforme o tamanho da fonte do próprio elemento, ótimo para paddings de botões.
-A porcentagem '%' se adapta ao tamanho do elemento pai, perfeita para caixas e layouts responsivos. */
+A porcentagem '%' se adapta ao tamanho do elemento pai, perfeita para caixas e layouts responsivos.
+*/
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0px;
+  margin: 0;
   color: #333333;
   background-color: #f5f5f5;
 }
 
 /* ---------- Cabeçalho ---------- */
+
 .cabecalho {
   background-color: #1565c0;
   padding: 32px;
@@ -19,7 +22,7 @@ body {
 h1 {
   color: #ffffff;
   font-size: 2rem;
-  margin: 0px;
+  margin: 0;
 }
 
 .subtitulo {
@@ -28,10 +31,11 @@ h1 {
 }
 
 /* ---------- Menu de navegação ---------- */
+
 .menu ul {
   list-style: none;
-  padding: 0px;
-  margin: 16px 0px 0px 0px;
+  padding: 0;
+  margin: 16px 0 0;
 }
 
 .menu li {
@@ -46,9 +50,10 @@ h1 {
 }
 
 /* ---------- Seções ---------- */
+
 .secao {
-  padding: 32px;
   max-width: 960px;
+  padding: 32px;
 }
 
 h2 {
@@ -82,6 +87,7 @@ p {
 }
 
 /* ---------- Grade de trilhas ---------- */
+
 .cartao {
   display: inline-block;
   width: 280px;
@@ -92,6 +98,16 @@ p {
   margin: 0.5em;
 }
 
+.cartao:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cartao:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* ---------- Botões ---------- */
+
 .botao {
   display: inline-block;
   background-color: #1565c0;
@@ -102,9 +118,19 @@ p {
   margin-top: 0.5em;
 }
 
+/* Mais específico: altera apenas os botões dentro dos cartões */
+
+.cartao .botao {
+  background-color: #b71c1c;
+}
+
 /* ---------- Lista de programação ---------- */
-/* Reflexão Bloco 2: O seletor '>' pega apenas os filhos diretos (os dias da semana), 
-enquanto o espaço (descendente) pegaria também os 'li' das sublistas internas. */
+
+/* Reflexão Bloco 2:
+O seletor '>' pega apenas os filhos diretos (os dias da semana),
+enquanto o espaço (descendente) pegaria também os 'li' das sublistas internas.
+*/
+
 .lista-dias > li {
   font-size: 1rem;
   line-height: 28px;
@@ -112,6 +138,7 @@ enquanto o espaço (descendente) pegaria também os 'li' das sublistas internas.
 }
 
 /* ---------- Formulário ---------- */
+
 .formulario {
   max-width: 480px;
 }
@@ -121,19 +148,30 @@ label {
   font-size: 1rem;
   margin-top: 16px;
 }
-label::after{
-  content: "*";
-  color: #b7c1c;
+
+/* Adiciona um asterisco vermelho indicando campo obrigatório */
+
+label::after {
+  content: " *";
+  color: #b71c1c;
+  font-weight: bold;
 }
 
-input, textarea {
+input,
+textarea {
   display: block;
-  width: 100%;                  
-  box-sizing: border-box;       
-  font-size: 1rem;              
-  padding: 0.5em;               
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding: 0.5em;
   margin-top: 4px;
   border: 1px solid #999999;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #1565c0;
+  outline: none;
 }
 
 button {
@@ -142,10 +180,11 @@ button {
   background-color: #1565c0;
   padding: 8px 24px;
   margin-top: 16px;
-  border: 0px;
+  border: 0;
 }
 
 /* ---------- Rodapé ---------- */
+
 .rodape {
   background-color: #263238;
   color: #cfd8dc;
@@ -154,43 +193,24 @@ button {
 }
 
 /* ---------- Bloco 3: Interações e Pseudo-classes ---------- */
-.menu ul li a:hover, .botao:hover {
+
+.menu ul li a:hover,
+.botao:hover {
   text-decoration: underline;
 }
 
-input:focus, textarea:focus {
-  border-color: #1565c0; 
-  outline: none;         
-}
+/* Reflexão Bloco 3:
+O :nth-child() permite estilizar elementos pela sua posição numérica.
+O navegador faz o cálculo sozinho, o que evita que a gente tenha que criar
+classes como '.item-par' ou '.item-impar' manualmente no HTML.
+*/
 
-/* Reflexão Bloco 3: O :nth-child() permite estilizar elementos pela sua posição numérica. 
-O navegador faz o cálculo sozinho, o que evita que a gente tenha que criar classes como 
-'.item-par' ou '.item-impar' manualmente lá no HTML. */
-.cartao:nth-child(even) {
-  background-color: #f9f9f9; 
-}
-
-.cartao:not(:last-child) {
-  margin-bottom: 1rem;
-}
- 
 /* ---------- Bloco 4: Especificidade e Customização ---------- */
-/* Reflexão Bloco 4: A especificidade dita qual regra vence em caso de conflito. 
-O seletor combinado '.cartao .botao' é mais específico e tem mais peso do que 
-o seletor simples '.botao'. Por isso, o navegador aplica a cor vermelha apenas 
-aos botões que estão dentro de um cartão, mantendo a organização do CSS sem 
-precisar usar o '!important'. */
 
-.botao {
-  display: inline-block;
-  background-color: #1565c0;
-  color: #ffffff;
-  font-size: 1rem;
-  text-decoration: none;
-  padding: 0.5em 1em;
-  margin-top: 0.5em;
-}
-
-.cartao .botao {
-    background-color: #b71c1c;
-}
+/* Reflexão Bloco 4:
+A especificidade dita qual regra vence em caso de conflito.
+O seletor combinado '.cartao .botao' é mais específico e tem mais peso
+do que o seletor simples '.botao'. Por isso, o navegador aplica a cor
+vermelha apenas aos botões que estão dentro de um cartão, sem precisar
+usar '!important'.
+*/
