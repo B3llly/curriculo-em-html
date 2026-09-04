@@ -1,16 +1,20 @@
 /* ============================================================
    TEMA 1 — ÍNDIGO (moderno / clean)
+   Para usar: salve este arquivo como  estilo.css  no seu projeto.
+   Você pode mudar CORES, FONTE e BORDAS aqui.
+   NÃO mexa na seção "LAYOUT (GRID)" — é o layout pedido na atividade.
    ============================================================ */
 
+/* ---- Cores e fonte (mude à vontade) ---- */
 :root {
-  --cor: #5C6BC0;
-  --cor-escura: #3f4aa0;
-  --texto: #1a1a2e;
-  --suave: #5b5b6b;
-  --fundo: #eef2ff;
+  --cor: #d81b60;
+  --cor-escura: #ad1457;
+  --texto: #2d242b;
+  --suave: #795548;
+  --fundo: #fcf4f7;
   --superficie: #ffffff;
-  --borda: #dfe3f5;
-  --raio: 12px;
+  --borda: #f4d0e1;
+  --raio: 16px;
 }
 
 body {
@@ -63,12 +67,13 @@ body {
 }
 /* ===================== fim do LAYOUT ===================== */
 
-/* ---- Aparência ---- */
+/* ---- Aparência (mude à vontade) ---- */
 .cabecalho {
-  background: linear-gradient(135deg, var(--cor), var(--cor-escura));
+  background: linear-gradient(135deg, #e91e63, #8e24aa);
   color: #fff;
   padding: 32px;
   border-radius: var(--raio);
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.15);
 }
 
 .cabecalho h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.4rem); }
@@ -82,16 +87,16 @@ body {
   border: 1px solid var(--borda);
   border-radius: var(--raio);
   padding: 22px;
-  box-shadow: 0 6px 20px rgba(30, 30, 60, .08);
+  box-shadow: 0 6px 20px rgba(216, 27, 96, 0.05);
 }
 
 .cartao + .cartao { margin-top: 24px; }
 h2 { color: var(--cor); margin-top: 0; }
 
 .projeto {
-  background: var(--fundo);
+  background: #fdf0f5;
   border: 1px solid var(--borda);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 16px;
 }
 
@@ -100,7 +105,15 @@ h2 { color: var(--cor); margin-top: 0; }
 .projeto a:hover { text-decoration: underline; }
 
 .habilidades { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.habilidades li { background: var(--fundo); border: 1px solid var(--borda); border-radius: 999px; padding: 4px 12px; font-size: .9rem; }
+.habilidades li { 
+  background: #fdf0f5; 
+  border: 1px solid var(--borda); 
+  color: var(--cor-escura);
+  border-radius: 999px; 
+  padding: 6px 14px; 
+  font-size: .9rem; 
+  font-weight: 500;
+}
 
 .contato { list-style: none; padding: 0; margin: 0; }
 .contato li { margin: 10px 0; }
