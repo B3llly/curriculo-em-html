@@ -1,228 +1,96 @@
 <!DOCTYPE html>
+<!-- ============================================================
+     TEMPLATE — Página pessoal com CSS Grid
+     Programação Web / Introdução às Tecnologias Web — IFAL
+     COMO USAR:
+     1) Copie ESTE index.html para o seu repositório (não mude a estrutura).
+     2) Escolha UM dos 3 temas de CSS (tema-1-indigo.css, tema-2-escuro.css
+        ou tema-3-editorial.css) e salve-o no seu projeto como  estilo.css
+        (é o nome que este HTML carrega logo abaixo).
+     3) Troque os textos marcados com "TROQUE" pelo seu conteúdo.
+     IMPORTANTE: o LAYOUT é feito com CSS Grid e é o mesmo nos 3 temas.
+     Você escolhe a APARÊNCIA (fonte, cores, bordas), não o layout.
+     ============================================================ -->
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo Isabelly</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: pink;
-            color: gray;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .perfil-grid {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .perfil-foto {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #3498db;
-        }
-
-        .perfil-info h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .perfil-info h2 {
-            font-size: 1.1rem;
-            color: #555;
-            font-weight: normal;
-            margin-bottom: 8px;
-        }
-
-        .perfil-info h3 {
-            font-size: 0.95rem;
-            color: #777;
-        }
-
-        .duas-colunas {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        h2.titulo-secao {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        ul li {
-            background: #eef5fc;
-            margin-bottom: 8px;
-            padding: 10px 15px;
-            border-left: 4px solid #3498db;
-            border-radius: 4px;
-        }
-
-        .atividades-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .atividade-box {
-            background: #f8f9fa;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
-        }
-
-        .atividade-box h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #34495e;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .link-institucional {
-            display: inline-block;
-            margin-top: 15px;
-            color: #27ae60;
-        }
-
-        @media (max-width: 768px) {
-            .perfil-grid, 
-            .duas-colunas {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .perfil-foto {
-                margin: 0 auto;
-                width: 180px;
-                height: 180px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Pessoal — Seu Nome</title>
+  <!-- Salve o tema escolhido como "estilo.css" (mesma pasta deste arquivo) -->
+  <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
+  <div class="pagina">
 
-    <div class="container">
+    <!-- ====== CABEÇALHO — TROQUE pelo seu nome e sua frase ====== -->
+    <header class="cabecalho">
+      <h1>Seu Nome</h1>
+      <p>Estudante de Sistemas de Informação · IFAL</p>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
 
-        <header class="card perfil-grid">
-            <img src="./isaa.jpeg" alt="Foto de Isabelly" class="perfil-foto">
-            <div class="perfil-info">
-                <h1>Isabelly Nascimento dos Santos :)</h1>
-                <h2><strong>Série:</strong> Primeiro Ano do Ensino Médio</h2>
-                <h2><strong>Curso Técnico:</strong> Desenvolvimento de Sistemas</h2>
-                <h3>Data de Nascimento: 13/12/2010</h3>
-            </div>
-        </header>
+    <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+    <main class="principal">
+      <section id="sobre" class="cartao">
+        <h2>Sobre mim</h2>
+        <!-- TROQUE por uma breve apresentação sua -->
+        <p>Escreva aqui um parágrafo se apresentando: quem você é, o que estuda
+          e o que gosta de fazer na área de tecnologia.</p>
+      </section>
 
-        <div class="duas-colunas">
-            <section class="card">
-                <h2 class="titulo-secao">Sobre Mim</h2>
-                <p>
-                    Eu gosto de coisas que me trazem leveza e bem-estar. O mar é um dos meus lugares favoritos, também gosto de cuidar do meu corpo, valorizando a saúde e o autocuidado no dia a dia.
-                </p>
-                <br>
-                <p>
-                    Tenho um carinho especial pelos animais, e, acima de tudo, gosto de sorrir, espalhando felicidade e aproveitando os momentos simples da vida.
-                </p>
-            </section>
-
-            <section class="card">
-                <h2 class="titulo-secao">Conhecimentos e Estudos</h2>
-                <ul>
-                    <li>Estou aprendendo a Programar com JS</li>
-                    <li>Sei o básico de HTML</li>
-                    <li>Conhecimento básico em Segurança da Informação</li>
-                    <li>Conhecimento básico em Redes de Computadores</li>
-                </ul>
-            </section>
+      <section id="projetos" class="cartao">
+        <h2>Projetos</h2>
+        <!-- Galeria com Grid: cada .projeto é um card; adicione/remova à vontade -->
+        <div class="projetos">
+          <article class="projeto">
+            <h3>Projeto 1</h3>
+            <p>O que é e o que você fez. TROQUE por um projeto seu.</p>
+          </article>
+          <article class="projeto">
+            <h3>Projeto 2</h3>
+            <p>Descrição curta do projeto.</p>
+          </article>
+          <article class="projeto">
+            <h3>Projeto 3</h3>
+            <p>Descrição curta do projeto.</p>
+          </article>
         </div>
+      </section>
+    </main>
 
-        <section class="card">
-            <h2 class="titulo-secao">Sobre o Curso de Desenvolvimento de Sistemas</h2>
-            <p>
-                O curso de Desenvolvimento de Sistemas forma profissionais capazes de projetar, desenvolver e manter softwares, como aplicativos e sistemas digitais. Abrange conteúdos como lógica de programação, linguagens de programação, banco de dados e segurança da informação, visando à criação de soluções tecnológicas eficientes.
-            </p>
-            <a href="https://www2.ifal.edu.br/campus/maceio" target="_blank" class="link-institucional">Visitar o site do IFAL - Campus Maceió &rarr;</a>
-        </section>
+    <!-- ====== BARRA LATERAL ====== -->
+    <aside class="lateral">
+      <section class="cartao">
+        <h2>Habilidades</h2>
+        <!-- TROQUE pelas suas habilidades -->
+        <ul class="habilidades">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Grid</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
 
-        <section class="card">
-            <h2 class="titulo-secao">Projetos e Atividades</h2>
-            <div class="atividades-grid">
-                
-                <div class="atividade-box">
-                    <h3>Capítulo 4</h3>
-                    <ul>
-                        <li><a href="cap04/at01.html">Atividade 1</a></li>
-                        <li><a href="cap04/at02.html">Atividade 2</a></li>
-                        <li><a href="cap04/at03.html">Atividade 3</a></li>
-                        <li><a href="cap04/at04.html">Atividade 4</a></li>
-                    </ul>
-                </div>
+      <section id="contato" class="cartao">
+        <h2>Contato</h2>
+        <!-- TROQUE pelos seus links -->
+        <ul class="contato">
+          <li>✉️ <a href="mailto:voce@exemplo.com">voce@exemplo.com</a></li>
+          <li>🐙 <a href="https://github.com/SEU-USUARIO">github.com/SEU-USUARIO</a></li>
+        </ul>
+      </section>
+    </aside>
 
-                <div class="atividade-box">
-                    <h3>Capítulo 5</h3>
-                    <ul>
-                        <li><a href="cap05/at01.html">Atividade 1</a></li>
-                        <li><a href="cap05/at02.html">Atividade 2</a></li>
-                        <li><a href="cap05/at03.html">Atividade 3</a></li>
-                        <li><a href="cap05/at04.html">Atividade 4</a></li>
-                        <li><a href="cap05/at05.html">Atividade 5</a></li>
-                    </ul>
-                </div>
+    <!-- ====== RODAPÉ — TROQUE o nome ====== -->
+    <footer class="rodape">© 2026 Seu Nome · feito com HTML + CSS Grid</footer>
 
-                <div class="atividade-box">
-                    <h3>Práticas CSS</h3>
-                    <ul>
-                        <li><a href="atividade-css01-sala/index.html">Atividade Pet Shop</a></li>
-                        <li><a href="atividade pweb1/index.html">Atividade de Refatoração</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-    </div>
-
+  </div>
 </body>
+
 </html>
